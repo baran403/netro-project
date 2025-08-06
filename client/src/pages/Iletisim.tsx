@@ -10,7 +10,7 @@ export default function Iletisim() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-navy text-white py-16">
+        <section className="bg-navy text-white py-12">
           <div className="container mx-auto px-4">
             {/* Breadcrumb */}
             <nav className="text-sm mb-8">

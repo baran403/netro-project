@@ -4,12 +4,42 @@ import Footer from "@/components/Footer";
 
 export default function Referanslar() {
   const references = [
-    { name: "ABC Holding", sector: "Ticari Yapılar", projects: 12 },
-    { name: "XYZ İnşaat", sector: "Konut Projeleri", projects: 8 },
-    { name: "Capital AVM", sector: "Alışveriş Merkezleri", projects: 3 },
-    { name: "Sağlık Bakanlığı", sector: "Kamu Projeleri", projects: 5 },
-    { name: "Endüstri A.Ş.", sector: "Sanayi Tesisleri", projects: 7 },
-    { name: "Antalya Üniversitesi", sector: "Eğitim Yapıları", projects: 4 },
+    { 
+      name: "ABC Holding", 
+      sector: "Ticari Yapılar", 
+      projects: 12,
+      logo: "https://via.placeholder.com/120x60/002f53/cfa93e?text=ABC"
+    },
+    { 
+      name: "XYZ İnşaat", 
+      sector: "Konut Projeleri", 
+      projects: 8,
+      logo: "https://via.placeholder.com/120x60/002f53/cfa93e?text=XYZ"
+    },
+    { 
+      name: "Capital AVM", 
+      sector: "Alışveriş Merkezleri", 
+      projects: 3,
+      logo: "https://via.placeholder.com/120x60/002f53/cfa93e?text=CAPITAL"
+    },
+    { 
+      name: "Sağlık Bakanlığı", 
+      sector: "Kamu Projeleri", 
+      projects: 5,
+      logo: "https://via.placeholder.com/120x60/002f53/cfa93e?text=SAGLIK"
+    },
+    { 
+      name: "Endüstri A.Ş.", 
+      sector: "Sanayi Tesisleri", 
+      projects: 7,
+      logo: "https://via.placeholder.com/120x60/002f53/cfa93e?text=ENDUSTRI"
+    },
+    { 
+      name: "Antalya Üniversitesi", 
+      sector: "Eğitim Yapıları", 
+      projects: 4,
+      logo: "https://via.placeholder.com/120x60/002f53/cfa93e?text=ANTALYA"
+    },
   ];
 
   return (
@@ -18,7 +48,7 @@ export default function Referanslar() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-navy text-white py-16">
+        <section className="bg-navy text-white py-12">
           <div className="container mx-auto px-4">
             {/* Breadcrumb */}
             <nav className="text-sm mb-8">
@@ -50,14 +80,20 @@ export default function Referanslar() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {references.map((reference, index) => (
                   <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-xl font-semibold text-navy">{reference.name}</h3>
+                    <div className="flex items-center justify-center mb-4">
+                      <img 
+                        src={reference.logo} 
+                        alt={`${reference.name} logo`}
+                        className="h-12 object-contain"
+                      />
+                    </div>
+                    <div className="text-center mb-4">
                       <span className="bg-gold text-navy px-3 py-1 rounded-full text-sm font-medium">
                         {reference.projects} Proje
                       </span>
                     </div>
-                    <p className="text-gray-600">{reference.sector}</p>
-                    <div className="mt-4 flex items-center text-sm text-gray-500">
+                    <p className="text-gray-600 text-center">{reference.sector}</p>
+                    <div className="mt-4 flex items-center justify-center text-sm text-gray-500">
                       <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
