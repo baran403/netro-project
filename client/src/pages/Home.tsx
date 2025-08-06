@@ -21,14 +21,14 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/projeler">
-                  <a className="bg-gold hover:bg-yellow-500 text-navy font-semibold px-8 py-3 rounded-lg transition-colors duration-200">
+                  <span className="bg-gold hover:bg-yellow-500 text-navy font-semibold px-8 py-3 rounded-lg transition-colors duration-200 cursor-pointer inline-block text-center">
                     Projelerimizi İnceleyin
-                  </a>
+                  </span>
                 </Link>
                 <Link href="/iletisim">
-                  <a className="border border-gold text-gold hover:bg-gold hover:text-navy font-semibold px-8 py-3 rounded-lg transition-colors duration-200">
+                  <span className="border border-gold text-gold hover:bg-gold hover:text-navy font-semibold px-8 py-3 rounded-lg transition-colors duration-200 cursor-pointer inline-block text-center">
                     İletişime Geçin
-                  </a>
+                  </span>
                 </Link>
               </div>
             </div>

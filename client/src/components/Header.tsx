@@ -44,15 +44,15 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link key={item.name} href={item.href}>
-                <a
-                  className={`transition-colors duration-200 ${
+                <span
+                  className={`transition-colors duration-200 cursor-pointer ${
                     isActiveLink(item.href)
                       ? "text-navy font-semibold border-b-2 border-gold pb-1"
                       : "text-gray-600 hover:text-navy"
                   }`}
                 >
                   {item.name}
-                </a>
+                </span>
               </Link>
             ))}
           </div>
@@ -73,8 +73,8 @@ export default function Header() {
             <div className="py-4 border-t border-gray-200">
               {navigation.map((item) => (
                 <Link key={item.name} href={item.href}>
-                  <a
-                    className={`block py-2 transition-colors ${
+                  <span
+                    className={`block py-2 transition-colors cursor-pointer ${
                       isActiveLink(item.href)
                         ? "text-navy font-semibold"
                         : "text-gray-600 hover:text-navy"
@@ -82,7 +82,7 @@ export default function Header() {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
-                  </a>
+                  </span>
                 </Link>
               ))}
             </div>

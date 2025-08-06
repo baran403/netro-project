@@ -28,9 +28,9 @@ export default function ProjectDetail() {
               <h1 className="text-2xl font-bold text-gray-900 mb-4">Proje Bulunamadı</h1>
               <p className="text-gray-600 mb-8">Aradığınız proje mevcut değil veya kaldırılmış olabilir.</p>
               <Link href="/projeler">
-                <a className="bg-navy text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors">
+                <span className="bg-navy text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors cursor-pointer inline-block">
                   Projelere Dön
-                </a>
+                </span>
               </Link>
             </div>
           </div>
@@ -65,13 +65,13 @@ export default function ProjectDetail() {
                   <ol className="flex items-center space-x-2">
                     <li>
                       <Link href="/">
-                        <a className="text-gold hover:text-navy transition-colors">Anasayfa</a>
+                        <span className="text-gold hover:text-navy transition-colors cursor-pointer">Anasayfa</span>
                       </Link>
                     </li>
                     <li className="text-gray-400">/</li>
                     <li>
                       <Link href="/projeler">
-                        <a className="text-gold hover:text-navy transition-colors">Projeler</a>
+                        <span className="text-gold hover:text-navy transition-colors cursor-pointer">Projeler</span>
                       </Link>
                     </li>
                     <li className="text-gray-400">/</li>

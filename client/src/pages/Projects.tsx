@@ -24,7 +24,7 @@ export default function Projects() {
               <ol className="flex items-center space-x-2">
                 <li>
                   <Link href="/">
-                    <a className="text-gold hover:text-white transition-colors">Anasayfa</a>
+                    <span className="text-gold hover:text-white transition-colors cursor-pointer">Anasayfa</span>
                   </Link>
                 </li>
                 <li className="text-gray-300">/</li>

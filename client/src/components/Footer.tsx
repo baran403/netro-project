@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   return (
@@ -34,11 +35,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Hızlı Bağlantılar</h4>
             <ul className="space-y-2">
-              <li><a href="/" className="text-gray-300 hover:text-gold transition-colors">Anasayfa</a></li>
-              <li><a href="/kurumsal" className="text-gray-300 hover:text-gold transition-colors">Kurumsal</a></li>
-              <li><a href="/projeler" className="text-gray-300 hover:text-gold transition-colors">Projeler</a></li>
-              <li><a href="/referanslar" className="text-gray-300 hover:text-gold transition-colors">Referanslar</a></li>
-              <li><a href="/haberler" className="text-gray-300 hover:text-gold transition-colors">Haberler</a></li>
+              <li><Link href="/"><span className="text-gray-300 hover:text-gold transition-colors cursor-pointer">Anasayfa</span></Link></li>
+              <li><Link href="/kurumsal"><span className="text-gray-300 hover:text-gold transition-colors cursor-pointer">Kurumsal</span></Link></li>
+              <li><Link href="/projeler"><span className="text-gray-300 hover:text-gold transition-colors cursor-pointer">Projeler</span></Link></li>
+              <li><Link href="/referanslar"><span className="text-gray-300 hover:text-gold transition-colors cursor-pointer">Referanslar</span></Link></li>
+              <li><Link href="/haberler"><span className="text-gray-300 hover:text-gold transition-colors cursor-pointer">Haberler</span></Link></li>
             </ul>
           </div>
 
