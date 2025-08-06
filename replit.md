@@ -38,6 +38,13 @@ Preferred communication style: Simple, everyday language.
 - **Users Table**: Basic user structure with username and password fields
 - **Validation**: Drizzle-Zod integration for runtime type validation
 
+### Navigation and User Experience
+- **Dropdown Menus**: Animated dropdown navigation for Corporate and Projects sections
+- **Corporate Pages**: Separate pages for About Us, Mission & Vision, and Management Team with icons
+- **Project Filtering**: Dedicated pages for ongoing and completed projects with filtered views
+- **Animations**: Custom CSS animations for dropdowns, hover effects, and mobile interactions
+- **Mobile Navigation**: Collapsible dropdown support with smooth animations on mobile devices
+
 ### Authentication and Authorization
 - **Implementation**: Basic user schema defined but authentication middleware not yet implemented
 - **Session Management**: Connect-pg-simple for PostgreSQL session storage (dependency present)

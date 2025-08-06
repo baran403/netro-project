@@ -13,9 +13,9 @@ export default function Header() {
       name: "Kurumsal", 
       href: "/kurumsal",
       dropdown: [
-        { name: "Hakkımızda", href: "/kurumsal" },
-        { name: "Misyon & Vizyon", href: "/kurumsal#misyon" },
-        { name: "Yönetim Kadrosu", href: "/kurumsal#yonetim" },
+        { name: "Hakkımızda", href: "/hakkimizda" },
+        { name: "Misyon & Vizyon", href: "/misyon-vizyon" },
+        { name: "Yönetim Kadrosu", href: "/yonetim-kadrosu" },
       ]
     },
     { 
@@ -23,8 +23,8 @@ export default function Header() {
       href: "/projeler",
       dropdown: [
         { name: "Tüm Projeler", href: "/projeler" },
-        { name: "Devam Eden", href: "/projeler?status=devam-eden" },
-        { name: "Tamamlanan", href: "/projeler?status=biten" },
+        { name: "Devam Eden Projeler", href: "/projeler/devam-eden" },
+        { name: "Tamamlanan Projeler", href: "/projeler/tamamlanan" },
       ]
     },
     { name: "Referanslar", href: "/referanslar" },
@@ -68,22 +68,24 @@ export default function Header() {
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
                     <div
-                      className={`flex items-center transition-colors duration-200 cursor-pointer ${
+                      className={`flex items-center transition-all duration-200 cursor-pointer transform hover:scale-105 ${
                         isActiveLink(item.href)
                           ? "text-navy font-semibold border-b-2 border-gold pb-1"
                           : "text-gray-600 hover:text-navy"
                       }`}
                     >
                       <span>{item.name}</span>
-                      <ChevronDown className="w-4 h-4 ml-1" />
+                      <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-200 ${
+                        openDropdown === item.name ? 'rotate-180' : ''
+                      }`} />
                     </div>
                     
                     {/* Dropdown Menu */}
                     {openDropdown === item.name && (
-                      <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50">
+                      <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                         {item.dropdown.map((subItem) => (
                           <Link key={subItem.name} href={subItem.href}>
-                            <span className="block px-4 py-2 text-gray-700 hover:bg-gold hover:text-navy transition-colors cursor-pointer">
+                            <span className="block px-4 py-2 text-gray-700 hover:bg-gold hover:text-navy transition-all duration-200 cursor-pointer transform hover:translate-x-1">
                               {subItem.name}
                             </span>
                           </Link>
@@ -94,7 +96,7 @@ export default function Header() {
                 ) : (
                   <Link href={item.href}>
                     <span
-                      className={`transition-colors duration-200 cursor-pointer ${
+                      className={`transition-all duration-200 cursor-pointer transform hover:scale-105 ${
                         isActiveLink(item.href)
                           ? "text-navy font-semibold border-b-2 border-gold pb-1"
                           : "text-gray-600 hover:text-navy"
@@ -142,11 +144,11 @@ export default function Header() {
                         />
                       </div>
                       {openDropdown === item.name && (
-                        <div className="mt-2 ml-4 space-y-1">
+                        <div className="mt-2 ml-4 space-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
                           {item.dropdown.map((subItem) => (
                             <Link key={subItem.name} href={subItem.href}>
                               <span 
-                                className="block py-2 text-gray-600 hover:text-navy transition-colors cursor-pointer"
+                                className="block py-2 text-gray-600 hover:text-navy transition-all duration-200 cursor-pointer transform hover:translate-x-1"
                                 onClick={() => setIsMobileMenuOpen(false)}
                               >
                                 {subItem.name}
