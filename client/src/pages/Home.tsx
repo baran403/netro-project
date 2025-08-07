@@ -52,10 +52,10 @@ export default function Home() {
           {/* Content */}
           <div className="container mx-auto px-4 relative z-20">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+              <h1 className="hero-title text-4xl lg:text-6xl font-bold mb-6">
                 Kaliteli İnşaat ve <span className="text-gold">Mühendislik</span> Hizmetleri
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed mb-8">
+              <p className="body-text text-xl text-gray-300 leading-relaxed mb-8">
                 Yılların deneyimi ve uzman kadromuzla hayalinizdeki projeleri gerçeğe dönüştürüyoruz.
                 Her projede mükemmellik ve kalite anlayışımızla hizmet veriyoruz.
               </p>
@@ -79,10 +79,10 @@ export default function Home() {
         <section className="py-20 bg-light-gray">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-4">
+              <h2 className="section-title text-3xl lg:text-4xl font-bold text-navy mb-4">
                 Neden Etiman Grup?
               </h2>
-              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              <p className="body-text text-gray-600 text-lg max-w-2xl mx-auto">
                 Sektörde edindiğimiz deneyim ve uzmanlığımızla sizlere en iyi hizmeti sunuyoruz
               </p>
             </div>
@@ -95,7 +95,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-navy mb-3">Kalite Güvencesi</h3>
-                <p className="text-gray-600">
+                <p className="body-text text-gray-600">
                   Her projemizde en yüksek kalite standartlarını uygulayarak müşteri memnuniyetini garantiliyoruz.
                 </p>
               </div>
@@ -107,7 +107,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-navy mb-3">Uzman Kadro</h3>
-                <p className="text-gray-600">
+                <p className="body-text text-gray-600">
                   Alanında uzman mühendis ve teknik kadromuzla projeleri en ince detayına kadar planlar ve uygularız.
                 </p>
               </div>
@@ -119,7 +119,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-navy mb-3">Zamanında Teslimat</h3>
-                <p className="text-gray-600">
+                <p className="body-text text-gray-600">
                   Planlanan sürelere uygun olarak projelerinizi zamanında ve eksiksiz şekilde teslim ediyoruz.
                 </p>
               </div>
@@ -131,11 +131,11 @@ export default function Home() {
         <section className="py-16 bg-gray-800">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="section-title text-3xl lg:text-4xl font-bold text-white mb-4">
                 PROJELER
               </h2>
               <div className="w-24 h-1 bg-gold mx-auto mb-6"></div>
-              <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+              <p className="body-text text-gray-300 text-lg max-w-2xl mx-auto">
                 Gerçekleştirdiğimiz projelerimizden örnekler
               </p>
             </div>

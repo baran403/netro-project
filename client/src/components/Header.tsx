@@ -52,7 +52,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center cursor-pointer">
-              <div className="text-2xl font-bold text-navy">
+              <div className="hero-title text-2xl font-bold text-navy">
                 <span>ETIMAN</span>
                 <span className="text-gold">GRUP</span>
               </div>
@@ -76,7 +76,7 @@ export default function Header() {
                           : "text-gray-600 hover:text-navy"
                       }`}
                     >
-                      <span>{item.name}</span>
+                      <span className="nav-text">{item.name}</span>
                       <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-200 ${
                         openDropdown === item.name ? 'rotate-180' : ''
                       }`} />
@@ -104,7 +104,7 @@ export default function Header() {
                           : "text-gray-600 hover:text-navy"
                       }`}
                     >
-                      {item.name}
+                      <span className="nav-text">{item.name}</span>
                     </span>
                   </Link>
                 )}
@@ -138,7 +138,7 @@ export default function Header() {
                         }`}
                         onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
                       >
-                        <span>{item.name}</span>
+                        <span className="nav-text">{item.name}</span>
                         <ChevronDown 
                           className={`w-4 h-4 transition-transform ${
                             openDropdown === item.name ? 'rotate-180' : ''
