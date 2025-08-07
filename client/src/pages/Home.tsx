@@ -8,9 +8,40 @@ export default function Home() {
       <Header />
       
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-navy text-white py-12">
-          <div className="container mx-auto px-4">
+        {/* Hero Section with Background Video */}
+        <section className="relative text-white py-20 overflow-hidden">
+          {/* Background Video */}
+          <div className="absolute inset-0 z-0">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+              poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1000"
+            >
+              <source
+                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                type="video/mp4"
+              />
+              {/* Fallback background image if video fails */}
+            </video>
+            
+            {/* Static background as fallback */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1000')`,
+                zIndex: -1
+              }}
+            ></div>
+          </div>
+          
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-navy bg-opacity-70 z-10"></div>
+          
+          {/* Content */}
+          <div className="container mx-auto px-4 relative z-20">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl lg:text-6xl font-bold mb-6">
                 Kaliteli İnşaat ve <span className="text-gold">Mühendislik</span> Hizmetleri
@@ -21,12 +52,12 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/projeler">
-                  <span className="bg-gold hover:bg-yellow-500 text-navy font-semibold px-8 py-3 rounded-lg transition-colors duration-200 cursor-pointer inline-block text-center">
+                  <span className="bg-gold hover:bg-yellow-500 text-navy font-semibold px-8 py-3 rounded-lg transition-all duration-300 cursor-pointer inline-block text-center transform hover:scale-105">
                     Projelerimizi İnceleyin
                   </span>
                 </Link>
                 <Link href="/iletisim">
-                  <span className="border border-gold text-gold hover:bg-gold hover:text-navy font-semibold px-8 py-3 rounded-lg transition-colors duration-200 cursor-pointer inline-block text-center">
+                  <span className="border-2 border-gold text-gold hover:bg-gold hover:text-navy font-semibold px-8 py-3 rounded-lg transition-all duration-300 cursor-pointer inline-block text-center transform hover:scale-105">
                     İletişime Geçin
                   </span>
                 </Link>
