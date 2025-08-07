@@ -1,8 +1,17 @@
 import { Link } from "wouter";
+import { useQuery } from "@tanstack/react-query";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import type { Project } from "@shared/schema";
 
 export default function Home() {
+  const { data: projects, isLoading } = useQuery<Project[]>({
+    queryKey: ["/api/projects"],
+  });
+
+  // Get first 5 projects for homepage display
+  const featuredProjects = projects?.slice(0, 5) || [];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -114,6 +123,58 @@ export default function Home() {
                   Planlanan sürelere uygun olarak projelerinizi zamanında ve eksiksiz şekilde teslim ediyoruz.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section className="py-16 bg-gray-800">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                PROJELER
+              </h2>
+              <div className="w-24 h-1 bg-gold mx-auto mb-6"></div>
+              <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+                Gerçekleştirdiğimiz projelerimizden örnekler
+              </p>
+            </div>
+            
+            {isLoading ? (
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <div key={index} className="aspect-square bg-gray-700 rounded-lg animate-pulse"></div>
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+                {featuredProjects.map((project, index) => (
+                  <Link key={project.id} href={`/projeler/${project.slug}`}>
+                    <div className="group relative aspect-square overflow-hidden rounded-lg cursor-pointer">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-navy bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center">
+                        <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                          <h3 className="font-semibold text-sm mb-2">{project.title}</h3>
+                          <p className="text-xs text-gray-300">{project.location}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+            
+            <div className="text-center mt-12">
+              <Link href="/projeler">
+                <span className="bg-gold text-navy px-8 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 cursor-pointer inline-block transform hover:scale-105">
+                  Tüm Projeleri Görüntüle
+                </span>
+              </Link>
             </div>
           </div>
         </section>
